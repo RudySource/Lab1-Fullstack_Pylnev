@@ -6,9 +6,20 @@ internal static class Program
     {
         while (true)
         {
-            Console.Write("Введите Имя: ");
+            Console.Write("\nВведите Имя: ");
             Console.WriteLine($"Привет, {Console.ReadLine()}\n{DateTime.Now}\nХотите продолжить? (y/n): ");
-            if (Console.ReadLine() == "n") break;
-        }
+            switch (Console.ReadLine()?.ToLower())
+            {
+                case "y":
+                    continue;
+                case "n":
+                    Console.WriteLine("Завершение программы...");
+                    return;
+                default:
+                    Console.WriteLine("Ошибка ввода!\n");
+                    break;
+            }
+        } //P.S Могу сделать через try catch ради интереса.
     } 
 }
+
